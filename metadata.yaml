@@ -1,0 +1,29 @@
+_repo: This-Side-of-Paradise_805
+creator:
+  author:
+    agent_name: Fitzgerald, F. Scott (Francis Scott)
+    alias: Fitzgerald, Francis Scott Key
+    birthdate: 1896
+    deathdate: 1940
+    gutenberg_agent_id: '420'
+    url: http://www.gutenberg.org/2009/agents/420
+    wikipedia: http://en.wikipedia.org/wiki/F._Scott_Fitzgerald
+gutenberg_issued: '1997-02-01'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '805'
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- '!lcsh:Children of the rich -- Fiction'
+- '!lcsh:World War, 1914-1918 -- Veterans -- Fiction'
+- '!lcsh:Advertising -- Fiction'
+- '!lcc:PS'
+- '!lcsh:Love stories'
+- '!lcsh:Young men -- Fiction'
+- '!lcsh:Bildungsromans'
+- '!lcsh:College students -- Fiction'
+title: This Side of Paradise
+url: http://www.gutenberg.org/ebooks/805
