@@ -1,5 +1,5 @@
 _repo: This-Side-of-Paradise_805
-_version: 0.0.2
+_version: 0.1.0
 covers:
 - attribution: Sawsan, 2015
   cover_type: original
@@ -33,5 +33,6 @@ subjects:
 - '!lcsh: Bildungsromans'
 - '!lcsh: World War, 1914-1918 -- Veterans -- Fiction'
 - '!lcsh: Young men -- Fiction'
+- GITenberg
 title: This Side of Paradise
 url: http://www.gutenberg.org/ebooks/805
