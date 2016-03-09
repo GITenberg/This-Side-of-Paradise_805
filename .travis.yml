@@ -21,13 +21,15 @@ script:
 - /usr/bin/python asciidoctor-htmlbook/gitberg-machine/machine.py -o . -m metadata.yaml book.html
 - xsltproc -stringparam external.assets.list " " ./HTMLBook/htmlbook-xsl/epub.xsl book.html
 - cp ./HTMLBook/stylesheets/epub/epub.css OEBPS
-- cp cover.jpg OEBPS/cover.jpg
+- if [ -e cover.jpg ]; then cp cover.jpg OEBPS/cover.jpg; fi
 # look for first images directory and one found, copy over to ./OEBPS
 - find . -name images -type d | head -n 1 | xargs -I {} mv {} ./OEBPS/
 - zip -rX book.epub mimetype
 - zip -rX book.epub OEBPS/ META-INF/
 - if test -d "OEBPS/images/"; then zip -rX book.epub OEBPS/images/ ;fi
 - mv book.epub This-Side-of-Paradise.epub
+- ebook-convert This-Side-of-Paradise.epub This-Side-of-Paradise.mobi
+- xvfb-run ebook-convert This-Side-of-Paradise.epub This-Side-of-Paradise.pdf
 branches:
   only:
   - master
@@ -43,10 +45,15 @@ deploy:
   provider: releases
   api_key:
     secure: HJRY52jaYg9XeLrujo86BQuvhvtd0YwweC0iaoJ3uZUhZe+dwWGJKJAUufa19Q8hajGbSlYTdbqRjyOpgNmdPB2LaaANY6ZKcEP4zHtmL8aiVeHL1C4xJXjbEYwH/+x/lQmGlrePaawe9DZkJArBGNmeuDzTgRtad0reOfznBvT0Gl2rfNfp1y/toXfnRiWGFUX+W36P2cSiwX3VfDiRxjBdfCMJIx2wC6dEKJv/A8D70oD2Bo8YuXhoG0GEdDh0ayiWxXVpPvrs5uOX357r9yq2VIPTjQHi1AzaNnQ0l/Ax3kOxmUBAShwGUBhGRKwQ5op7iNm+v/LKroF93fPLnvjt5UyrWinXBioflxJkpYklnMrhNcOZWjLuhectTXF4a1y27JHmpLK+vTzAWFQ1p3GrDxaiw6c7afMv/DXWCuO4dduwMCjX97Sd0NyKqevXjxFpoi1Hr9nKpzSDtAeM4viOJJBBXg2PTEGHv4hSAbdx1yiJLvJ5wDmFBrErHzarMuL675J9JRN9xbVBd3EOOROnGPyAe0azEY94DTz0QsDIWPKGUisyCYey7BBRi6ayCYNA+wpTQ4hYqbu9DxLlSPM2bSLeL8EFumFDo/7HwKu3jVsNnQbVo5/v36zjimW3J2++kQrcspdiZqlmbTQcV4zp8H1gifBXNJCB2lD0JJg=
-  file: This-Side-of-Paradise.epub
+  file:
+    - This-Side-of-Paradise.epub
+    - This-Side-of-Paradise.mobi
+    - This-Side-of-Paradise.pdf
   "on":
     repo: GITenberg/This-Side-of-Paradise_805
 addons:
   apt:
     packages:
     - xsltproc
+    - xvfb
+    - calibre
