@@ -1,5 +1,5 @@
 _repo: This-Side-of-Paradise_805
-_version: 0.2.1
+_version: 0.2.2
 covers:
 - attribution: Sawsan, 2015
   cover_type: original
@@ -15,6 +15,8 @@ creator:
     gutenberg_agent_id: '420'
     url: http://www.gutenberg.org/2009/agents/420
     wikipedia: http://en.wikipedia.org/wiki/F._Scott_Fitzgerald
+edition_identifiers:
+  edition_id: http://www.gutenberg.org/ebooks/805#This-Side-of-Paradise
 gutenberg_issued: '1997-02-01'
 gutenberg_type: Text
 identifiers:
